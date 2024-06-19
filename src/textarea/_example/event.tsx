@@ -12,16 +12,16 @@ export default function Textarea() {
     console.log('onFocus: ', value, e);
   }
 
-  const onKeyup = (e) =>{
-    console.log('onKeyup', e)
+  const onKeyup = (value,{ e }) =>{
+    console.log('onKeyup', value, e)
   }
 
-  const onKeypress = (e) =>{
-    console.log('onKeypress', e)
+  const onKeypress = (value,{ e }) =>{
+    console.log('onKeypress', value, e)
   }
 
-  const onKeydown = (e) =>{
-    console.log('onKeydown', e)
+  const onKeydown = (value,{ e }) =>{
+    console.log('onKeydown', value, e)
   }
 
     return (

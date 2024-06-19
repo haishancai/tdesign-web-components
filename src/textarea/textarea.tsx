@@ -167,9 +167,6 @@ export default class Textarea extends Component<TdTextareaProps> {
       tips,
       maxlength,
       maxcharacter,
-      onKeydown,
-      onKeypress,
-      onKeyup,
     } = props
 
     return (
@@ -188,9 +185,6 @@ export default class Textarea extends Component<TdTextareaProps> {
             onChange={(e) => {
               this.inputValueChangeHandle(e)
             }}
-            onKeyPress={(e) => onKeypress((e.target as HTMLInputElement).value, { e })}
-            onKeyDown={(e) => onKeydown((e.target as HTMLInputElement).value, { e })}
-            onKeyUp={(e) => onKeyup((e.target as HTMLInputElement).value, { e })}
             ref={this.textArea}
           ></textarea>
           {tips && <div class={classNames(`${this.classPrefix}-tips`, this.getTipsStyle(status))}>{tips}</div>}

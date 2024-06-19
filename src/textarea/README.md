@@ -27,24 +27,26 @@ spline: base
 
 ## API
 
-### Button Props
+### Textarea Props
 
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
-className | String | - | 类名 | N
-style | Object | - | 样式 | N
-block | Boolean | false | 是否为块级元素 | N
-children | TNode | - | 按钮内容，TS 类型：`string \| TNode`。[通用类型定义](https://github.com/Tencent/tdesign-react/blob/develop/src/common.ts) | N
-disabled | Boolean | false | 禁用状态 | N
-ghost | Boolean | false | 是否为幽灵按钮（镂空按钮） | N
-href | String | - | 跳转地址。href 存在时，按钮标签默认使用 `<a>` 渲染；如果指定了 `tag` 则使用指定的标签渲染 | N
-icon | TElement | - | 按钮内部图标，可完全自定义。TS 类型：`TNode`。[通用类型定义](https://github.com/Tencent/tdesign-react/blob/develop/src/common.ts) | N
-loading | Boolean | false | 是否显示为加载状态 | N
-shape | String | rectangle | 按钮形状，有 4 种：长方形、正方形、圆角长方形、圆形。可选项：rectangle/square/round/circle | N
-size | String | medium | 组件尺寸。可选项：small/medium/large。TS 类型：`SizeEnum`。[通用类型定义](https://github.com/Tencent/tdesign-react/blob/develop/src/common.ts) | N
-tag | String | - | 渲染按钮的 HTML 标签，默认使用标签 `<button>` 渲染，可以自定义为 `<a>` `<div>` 等。透传全部 HTML 属性，如：`href/target/data-*` 等。⚠️ 禁用按钮 `<button disabled>`无法显示 Popup 浮层信息，可通过修改 `tag=div` 解决这个问题。可选项：button/a/div | N
-theme | String | - | 组件风格，依次为默认色、品牌色、危险色、警告色、成功色。可选项：default/primary/danger/warning/success | N
-type | String | button | 按钮类型。可选项：submit/reset/button | N
-variant | String | base | 按钮形式，基础、线框、虚线、文字。可选项：base/outline/dashed/text | N
-onClick | Function |  | TS 类型：`(e: MouseEvent) => void`<br/>点击时触发 | N
-
+allowInputOverMax | Boolean | false | 超出`maxlength`或`maxcharacter`之后是否还允许输入 | N
+autofocus | Boolean | false | 自动聚焦，拉起键盘 | N
+autosize | Boolean/Object | false | 高度自动撑开。Object属性：`minRows：number,maxRows：number`。autosize = true 表示组件高度自动撑开，同时，依旧允许手动拖高度。如果设置了 autosize.maxRows 或者 autosize.minRows 则不允许手动调整高度 | N
+disabled | Boolean | false | 是否禁用文本框 | N
+label | TNode | - | 左侧文本 | N
+maxcharacter | Number | - | 用户最多可以输入的字符个数，一个中文汉字表示两个字符长度 | N
+maxlength | Number | - | 用户最多可以输入的字符个数 | N
+name | String | - | 名称 | N
+placeholder | String | '' | 占位符 | N
+readonly | Boolean | false | 只读状态 | N
+status | String | - | 文本框状态。可选项：`default/success/warning/error` | N
+tips | TNode | - | 输入框下方提示文本 | N
+value | String | - | 文本框值 | N
+defaultValue | String | - | 文本框值，非受控属性 | N
+onBlur | Function |  | TS 类型：`(value: string, context: FocusEvent) => void`<br/>失去焦点时触发 | N
+onFocus | Function |  | TS 类型：`(value: string, context: FocusEvent) => void`<br/>获得焦点时触发 | N
+onKeydown | Function |  | TS 类型：`(value: string, context: KeyboardEvent) => void`<br/>键盘按下时触发 | N
+onKeypress | Function |  | TS 类型：`(value: string, context: KeyboardEvent) => void`<br/>按下字符键时触发 | N
+onKeyup | Function |  | TS 类型：`(value: string, context: KeyboardEvent) => void`<br/>释放键盘时触发 | N
